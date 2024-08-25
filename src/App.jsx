@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {Route, Routes} from "react-router-dom";
+import Home from "./pages/home.jsx";
+import Events from "./pages/events.jsx";
+import Mou from "./pages/mou.jsx";
+import Scholarship from "./pages/scholarship.jsx";
+import Internship from "./pages/internship.jsx";
+import Team from "./pages/team.jsx";
+import Header from "./components/header.jsx";
+import Footer from "./components/footer.jsx";
+import ProgressBar from "react-scroll-progress-bar";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <ProgressBar height="8" bgcolor="#F43059" duration="0.2" />
+        <Header />
+          <div className='max-w-7xl mx-auto '>
+              <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/mou" element={<Mou />} />
+                  <Route path="/scholarship" element={<Scholarship />} />
+                  <Route path="/internship" element={<Internship />} />
+                  <Route path="/team" element={<Team />} />
+              </Routes>
+          </div>
+        <Footer />
     </>
   )
 }
