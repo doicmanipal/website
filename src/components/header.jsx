@@ -25,10 +25,10 @@ const Header = () => {
                             className="menu menu-sm  bg-neutral  dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to='/events'>Events</Link></li>
-                            <li><a href='/mou'>MoUs</a></li>
-                            <li><a href="scholarships">Scholarships</a></li>
-                            <li><a href="/internships">Internships</a></li>
-                            <li><a href="/team">Team</a></li>
+                            <li><Link to='/mou'>MoUs</Link></li>
+                            <li><Link to="scholarships">Scholarships</Link></li>
+                            <li><Link to="/internships">Internships</Link></li>
+                            <li><Link to="/team">Team</Link></li>
                         </ul>
                     </div>
                     <a href="/" className=" hidden lg:flex rounded-box text-xl">
@@ -38,12 +38,12 @@ const Header = () => {
                 </div>
                 <div className="navbar-center  hidden lg:flex">
                     <ul className="menu menu-horizontal text-xl px-1">
-                        <li><a href='/'>Home</a></li>
-                        <li><a href='/events'>Events</a></li>
-                        <li><a href='/mou'>MoUs</a></li>
-                        <li><a href="scholarships">Scholarships</a></li>
-                        <li><a href="/internships">Internships</a></li>
-                        <li><a href="/team">Team</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to='/events'>Events</Link></li>
+                        <li><Link to='/mou'>MoUs</Link></li>
+                        <li><Link to="scholarships">Scholarships</Link></li>
+                        <li><Link to="/internships">Internships</Link></li>
+                        <li><Link to="/team">Team</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
