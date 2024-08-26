@@ -115,7 +115,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex items-center justify-center px-6 pt-12 text-sm">
-                    <span className="text-black">©2020 Manipal University Jaipur, Jaipur-Ajmer Expressway, Rajasthan 303007</span>
+                    <span className="text-black">©2024 Manipal University Jaipur, Jaipur-Ajmer Expressway, Rajasthan 303007</span>
                 </div>
             </footer>
         </div>
