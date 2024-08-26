@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const Header = () => {
     return (<div className='sticky top-4 text-white text-xl z-10 px-[6px] md:p-0'>
             <div
@@ -20,9 +22,9 @@ const Header = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm bg-opacity-30 backdrop-filter backdrop-blur-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a href='/'>Home</a></li>
-                            <li><a href='/events'>Events</a></li>
+                            className="menu menu-sm  bg-neutral  dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to='/events'>Events</Link></li>
                             <li><a href='/mou'>MoUs</a></li>
                             <li><a href="scholarships">Scholarships</a></li>
                             <li><a href="/internships">Internships</a></li>
@@ -34,7 +36,7 @@ const Header = () => {
                              className='w-[128px] lg:w-[192px]'/>
                     </a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     <ul className="menu menu-horizontal text-xl px-1">
                         <li><a href='/'>Home</a></li>
                         <li><a href='/events'>Events</a></li>
@@ -45,7 +47,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-accent border-accent text-white text-xl hover:bg-primary">MUJ Website
+                    <a className="btn bg-accent border-accent text-white text-xl hidden lg:flex hover:bg-primary">Homepage
                         <svg xmlns="http://www.w3.org/2000/svg" height='24px' width="24px" className='fill-white'
                              viewBox="0 0 512 512">
                             <path

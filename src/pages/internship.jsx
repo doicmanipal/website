@@ -1,4 +1,6 @@
 import InternshipAccordion from "../components/internshipAccordion.jsx";
+import {PrismicProvider} from "@prismicio/react";
+import {client} from "../utils/prismic.js";
 
 
 const Internship = () => {
@@ -21,7 +23,9 @@ const Internship = () => {
                     </div>
                 </div>
                 <div className='my-12 mx-auto'>
-                    <InternshipAccordion />
+                    <PrismicProvider client={client}>
+                        <InternshipAccordion />
+                    </PrismicProvider>
                 </div>
             </div>
         </div>
