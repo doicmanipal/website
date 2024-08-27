@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    return (<div className='sticky top-4 text-white z-10 px-[6px] md:p-0'>
+    return (<div className='sticky top-4  z-10 px-[6px] md:p-0'>
             <div
-                className="navbar max-w-7xl bg-opacity-50 backdrop-filter backdrop-blur-md mt-4 rounded-box bg-neutral md:mx-auto">
+                className="navbar max-w-7xl bg-opacity-50 backdrop-filter backdrop-blur-md mt-4 rounded-box bg-white md:mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
