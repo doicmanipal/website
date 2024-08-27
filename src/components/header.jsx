@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    return (<div className='sticky top-4 text-white  z-10 px-[6px] md:p-0'>
+    return (<div className='sticky top-4 text-white z-10 px-[6px] md:p-0'>
             <div
                 className="navbar max-w-7xl bg-opacity-50 backdrop-filter backdrop-blur-md mt-4 rounded-box bg-neutral md:mx-auto">
                 <div className="navbar-start">
@@ -36,7 +36,7 @@ const Header = () => {
                              className='w-[128px] lg:w-[192px]'/>
                     </a>
                 </div>
-                <div className="navbar-center  hidden lg:flex">
+                <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-xl px-1">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to='/events'>Events</Link></li>

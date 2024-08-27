@@ -1,10 +1,9 @@
-import Hero from "../components/hero.jsx";
+
 
 
 const Home = () => {
     return (
         <div>
-            <Hero/>
             <div className="text-pretty">
                 <div className='mx-auto mb-6 mt-12 max-w-7xl'>
                     <hr className='w-10 mx-auto h-1 bg-primary'/>
