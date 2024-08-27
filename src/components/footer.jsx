@@ -44,6 +44,7 @@ const Footer = () => {
                                href="https://jaipur.manipal.edu/muj/academics/academicrules.html">Academic
                                 Rules &amp; Regulations</a>
                             <a rel="noopener noreferrer"
+                               {/* eslint-disable-next-line react/no-unescaped-entities */}
                                href="https://jaipur.manipal.edu/muj/academics/students-corner.html">Student's Corner</a>
                             <a rel="noopener noreferrer"
                                href="https://jaipur.manipal.edu/muj/academics/Academic-Calender.html">Academic Calendar
