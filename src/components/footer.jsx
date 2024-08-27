@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <footer className="pt-10 bg-gray-200 text-orange-600">
                 <div
-                    className="container px-2 max-w-7xl grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-5">
+                    className="container px-2 max-w-7xl grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
                     <div className="flex flex-col space-y-3">
                         <h2 className="font-medium">About Us</h2>
                         <div className="flex flex-col space-y-2 text-sm text-black">
@@ -102,15 +102,6 @@ const Footer = () => {
                             <a rel="noopener noreferrer"
                                href="https://jaipur.manipal.edu/muj/life-at-muj/Newsletter-MUJ-Times.html"> MUJ
                                 Newsletter - MUJ Times</a>
-                        </div>
-                    </div>
-                    <div className="flex flex-col space-y-3">
-                        <h2 className="font-medium">Community</h2>
-                        <div className="flex flex-col space-y-2 text-sm text-black">
-                            <a rel="noopener noreferrer" href="#">GitHub</a>
-                            <a rel="noopener noreferrer" href="#">Discord</a>
-                            <a rel="noopener noreferrer" href="#">Twitter</a>
-                            <a rel="noopener noreferrer" href="#">YouTube</a>
                         </div>
                     </div>
                 </div>
