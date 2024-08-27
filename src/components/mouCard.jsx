@@ -15,9 +15,6 @@ const MouCard = () => {
     if (!mou || mou.length === 0) {
         return <div className='hidden'>No internships found.</div>;
     }
-    console.log('mou:', mou);
-    console.log('State:', state);
-    console.log('Error:', error);
     return (
         <>
         {mou.map((mous) => (

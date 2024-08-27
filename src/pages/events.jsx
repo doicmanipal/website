@@ -1,4 +1,6 @@
 import EventCard from "../components/eventCard.jsx";
+import {client} from "../utils/prismic.js";
+import {PrismicProvider} from "@prismicio/react";
 
 const Events = () => {
     return (<>
@@ -16,10 +18,11 @@ const Events = () => {
                 </h1>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 my-12'>
-                <EventCard></EventCard>
+                <PrismicProvider client={client}>
+                    <EventCard></EventCard>
+                </PrismicProvider>
             </div>
         </div>
-
     </>);
 };
 

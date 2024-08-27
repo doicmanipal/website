@@ -9,11 +9,13 @@ import Team from "./pages/team.jsx";
 import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
 
+
+
 function App() {
 
     return (<>
             <Header/>
-            <div className='mx-auto overflow-x-hidden min-h-screen'>
+            <div className='mx-auto overflow-x-hidden scroll-smooth' >
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/events" element={<Events/>}/>

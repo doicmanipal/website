@@ -2,7 +2,7 @@
 
 const OtherScholarships = () => {
     return (
-        <div>
+        <div className="mx-auto">
             <div className="card bg-neutral text-white w-96">
                 <div className="card-body">
                     <h2 className="card-title">Card title!</h2>

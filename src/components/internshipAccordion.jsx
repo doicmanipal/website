@@ -16,9 +16,6 @@ const InternshipAccordion = () => {
     if (!internships || internships.length === 0) {
         return <div className='hidden'>No internships found.</div>;
     }
-    console.log('Internships:', internships);
-    console.log('State:', state);
-    console.log('Error:', error);
     return (
         <div>
             {internships.map((internship) => (
@@ -35,7 +32,7 @@ const InternshipAccordion = () => {
                                 />
                             </div>
                             <div className="collapse-content">
-                                <p>{internship.data.description}</p>
+                                <p><span className='font-bold'>Description</span>{internship.data.description}</p>
                                 <p><span className='font-bold'>Deadline:</span> {internship.data.deadline}</p>
                                 <button className="btn btn-primary"><a href={internship.data.link}>Know
                                     more</a>
