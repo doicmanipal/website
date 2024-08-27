@@ -12,7 +12,7 @@ const EventModal = () => {
     }
 
     if (!event || event.length === 0) {
-        return <div className='hidden'>No internships found.</div>;
+        return <div className='hidden'>No details found.</div>;
     }
     return (
         <>

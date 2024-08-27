@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import OtherScholarships from "./scholarships/otherScholarships.jsx";
 import PartnerScholarships from "./scholarships/partnerScholarships.jsx";
+import {client} from "../utils/prismic.js";
+import {PrismicProvider} from "@prismicio/react";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState('partnered');
@@ -29,13 +31,17 @@ const Tabs = () => {
         <div className="mt-4">
             {activeTab === 'other' && (
                 <div className='grid grid-cols-1 md:grid-cols-3 justify-between'>
-                    <OtherScholarships/>
+                    <PrismicProvider client={client}>
+                        <OtherScholarships/>
+                    </PrismicProvider>
                 </div>
             )}
 
             {activeTab === 'partnered' && (
                 <div className='grid grid-cols-1 md:grid-cols-3 justify-between'>
-                    <PartnerScholarships/>
+                    <PrismicProvider client={client}><
+                        PartnerScholarships/>
+                    </PrismicProvider>
                 </div>
             )}
         </div>

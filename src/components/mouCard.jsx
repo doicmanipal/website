@@ -13,7 +13,7 @@ const MouCard = () => {
     }
 
     if (!mou || mou.length === 0) {
-        return <div className='hidden'>No internships found.</div>;
+        return <div className='hidden'>No mous's found.</div>;
     }
     return (
         <>
@@ -21,17 +21,17 @@ const MouCard = () => {
             <div key={mous.id}>
                 <div className="card bg-base-100 w-96 shadow-xl">
                     <div className="card-body">
-                        <div className="card-title">
+                        <div className="">
                             <PrismicRichText
                                 field={mous.data.name}
                                 components={{
-                                    heading1: ({children}) => <h2>{children}</h2>,
+                                    heading1: ({children}) => <h2 className='card-title'>{children}</h2>,
                                 }}
                             />
                         </div>
-                        <p><span>Qs:</span>{mous.data.qs}</p>
-                        <p><span>Department:</span>{mous.data.department}</p>
-                        <p><span>Muj-nodal:</span>{mous.data.nodal}</p>
+                        <p><span className='font-bold'>Qs:</span>{mous.data.qs}</p>
+                        <p><span className='font-bold'>Department:</span>{mous.data.department}</p>
+                        <p><span className='font-bold'>Muj-nodal:</span>{mous.data.nodal}</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary"><a href={mous.data.link}>MoU</a></button>
                         </div>
