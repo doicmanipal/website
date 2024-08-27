@@ -1,10 +1,11 @@
-
+import Hero from "../components/hero.jsx";
 
 
 const Home = () => {
     return (
         <div>
-            <div className="text-pretty">
+            <Hero></Hero>
+            <div className="text-pretty ">
                 <div className='mx-auto mb-6 mt-12 max-w-7xl'>
                     <hr className='w-10 mx-auto h-1 bg-primary'/>
                     <h1 className='text-5xl font-bold flex justify-center text-center mx-auto'>
@@ -17,7 +18,7 @@ const Home = () => {
                     </h1>
                 </div>
             </div>
-            <div>
+            <div className='max-w-7xl px-2 mx-auto'>
                 <div className='mx-auto p-4  max-w-7xl'>
                     <p className='text-sm sm:text-2xl text-left mx-auto'>Directorate of International and
                         Collaborations (DoIC) is headed by a team of dedicated staff and supported by the advisory

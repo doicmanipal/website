@@ -2,7 +2,7 @@ import Tabs from "../components/tabs.jsx";
 
 const Scholarship = () => {
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen max-w-7xl mx-auto px-2'>
             <div className="">
                 <div className='mx-auto mb-6 mt-12 max-w-7xl'>
                     <hr className='w-10 mx-auto h-1 bg-primary'/>

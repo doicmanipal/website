@@ -3,7 +3,7 @@ import Teamcard from "../components/teamcard.jsx";
 const Team = () => {
     return (
         <>
-            <div className='mx-auto mt-12  max-w-7xl'>
+            <div className='mx-auto mt-12  max-w-7xl px-2'>
                 <hr className='w-8 mx-auto h-1 bg-primary'/>
                 <h1 className='text-5xl font-bold text-center flex justify-center mx-auto'>
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -14,14 +14,12 @@ const Team = () => {
                     </svg>
                     Team
                 </h1>
-            </div>
-            <div className='grid md:grid-cols-3 grid-cols-1 mt-8'>
-                <Teamcard/>
+                <div className='grid md:grid-cols-3 grid-cols-1 mt-8'>
+                    <Teamcard/>
+                </div>
             </div>
         </>
-
-    )
-        ;
+    );
 };
 
 export default Team;

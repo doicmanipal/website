@@ -8,14 +8,12 @@ import Internship from "./pages/internship.jsx";
 import Team from "./pages/team.jsx";
 import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
-import Hero from "./components/hero.jsx";
 
 function App() {
 
     return (<>
             <Header/>
-            <Hero />
-            <div className='max-w-7xl mx-auto overflow-hidden min-h-screen px-2'>
+            <div className='mx-auto overflow-x-hidden min-h-screen'>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/events" element={<Events/>}/>

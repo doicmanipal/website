@@ -3,7 +3,7 @@ import {client} from "../utils/prismic.js";
 import {PrismicProvider} from "@prismicio/react";
 
 const Mou = () => {
-    return (<div>
+    return (<div className='max-w-7xl px-2 mx-auto'>
             <div className="">
                 <div className='mx-auto mb-6 mt-12 max-w-7xl'>
                     <hr className='w-10 mx-auto h-1  bg-primary'/>

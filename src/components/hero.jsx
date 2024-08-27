@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const Hero = () => {
 
     return (
@@ -11,7 +13,7 @@ const Hero = () => {
                 <div className="hero-content text-neutral-content text-center">
                     <div className="">
                         <h1 className="mb-5 text-5xl font-bold">Welcome to the website for the <br/> <span className='text-primary' >Directorate Of International Collaborations MUJ.</span> </h1>
-                        <button className="btn btn-primary text-white">Our Events</button>
+                        <Link to='/events'><button className="btn btn-primary text-white">Our Events</button></Link>
                     </div>
                 </div>
             </div>

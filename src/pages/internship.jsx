@@ -5,7 +5,7 @@ import {client} from "../utils/prismic.js";
 
 const Internship = () => {
     return (
-        <div>
+        <div className='max-w-7xl mx-auto px-2'>
             <div className='min-h-screen'>
                 <div className="">
                     <div className='mx-auto mb-6 mt-12 max-w-7xl'>
