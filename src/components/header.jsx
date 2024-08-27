@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    return (<div className='sticky top-4 text-white text-xl z-10 px-[6px] md:p-0'>
+    return (<div className='sticky top-4 text-white  z-10 px-[6px] md:p-0'>
             <div
                 className="navbar max-w-7xl bg-opacity-50 backdrop-filter backdrop-blur-md mt-4 rounded-box bg-neutral md:mx-auto">
                 <div className="navbar-start">
@@ -31,7 +31,7 @@ const Header = () => {
                             <li><Link to="/team">Team</Link></li>
                         </ul>
                     </div>
-                    <a href="/" className=" hidden lg:flex rounded-box text-xl">
+                    <a href="/" className=" hidden lg:flex rounded-box ">
                         <img src='https://jaipur.manipal.edu/img/manipal-university-jaipur-logo.svg' alt="Muj"
                              className='w-[128px] lg:w-[192px]'/>
                     </a>
@@ -47,7 +47,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-accent border-accent text-white text-xl hidden lg:flex hover:bg-primary">Homepage
+                    <a className="btn bg-accent border-accent text-white  hidden lg:flex hover:bg-primary">Homepage
                         <svg xmlns="http://www.w3.org/2000/svg" height='24px' width="24px" className='fill-white'
                              viewBox="0 0 512 512">
                             <path

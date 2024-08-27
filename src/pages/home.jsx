@@ -5,11 +5,11 @@ const Home = () => {
     return (
         <div>
             <Hero/>
-            <div className="">
+            <div className="text-pretty">
                 <div className='mx-auto mb-6 mt-12 max-w-7xl'>
                     <hr className='w-10 mx-auto h-1 bg-primary'/>
                     <h1 className='text-5xl font-bold flex justify-center text-center mx-auto'>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="60px" width="45px"
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="50px" width="50px"
                              className='fill-primary px-1'>
                             <path
                                 d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
@@ -36,7 +36,7 @@ const Home = () => {
 
                 </div>
                 <hr className='h-1 max-w-7xl mb-4 bg-primary'/>
-                <div className='bg-accent p-4 mb-4 rounded-xl '>
+                <div className='bg-accent p-4 mb-12 rounded-xl '>
                     <div className='mx-auto max-w-7xl'>
 
                         <h2 className='text-2xl text-primary text-left flex items-center'>Provide Direction
@@ -46,7 +46,7 @@ const Home = () => {
                                     d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
                             </svg>
                         </h2>
-                        <p className='text-sm sm:text-xl text-left mx-auto text-white'>The Office is primarily
+                        <p className='text-sm sm:text-xl text-left mx-auto text-white text-pretty'>The Office is primarily
                             responsible for
                             providing direction, assistance and synchronizing all of the University’s international work
                             with overseas Institutions and Governments. While providing this leadership role, the office

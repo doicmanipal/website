@@ -6,7 +6,7 @@ const InternshipAccordion = () => {
     const [internships, { state, error }] = useAllPrismicDocumentsByType('internships');
 
     if (state === 'loading') {
-        return <div>Loading internships...</div>;
+        return <span className="loading mx-auto flex loading-ring loading-lg"></span>;
     }
 
     if (error) {
@@ -14,36 +14,35 @@ const InternshipAccordion = () => {
     }
 
     if (!internships || internships.length === 0) {
-        return <div>No internships found.</div>;
+        return <div className='hidden'>No internships found.</div>;
     }
     console.log('Internships:', internships);
     console.log('State:', state);
     console.log('Error:', error);
     return (
         <div>
-
             {internships.map((internship) => (
                 <div key={internship.id}>
-                    <div className="card bg-base-100 w-96 shadow-xl">
-                        <div className="card-body">
-                            <div className="card-title"><PrismicRichText
-                                field={internship.data.name}
-                                components={{
-                                    heading1: ({children}) => <h2>{children}</h2>,
-                                }}
-                            /></div>
-                            <p>{internship.data.description}</p>
-                            <p><span className='font-bold'>Deadline:</span> {internship.data.deadline}</p>
-                            <div className="card-actions justify-end">
-
-                                <button className="btn btn-primary"><a href={internship.data.link}>Know more</a></button>
+                    <div className="join join-vertical w-full">
+                        <div className="collapse collapse-arrow join-item border-base-300 border">
+                            <input type="radio" name="my-accordion-4" defaultChecked/>
+                            <div className="collapse-title text-xl font-medium">
+                                <PrismicRichText
+                                    field={internship.data.name}
+                                    components={{
+                                        heading1: ({children}) => <h2>{children}</h2>,
+                                    }}
+                                />
+                            </div>
+                            <div className="collapse-content">
+                                <p>{internship.data.description}</p>
+                                <p><span className='font-bold'>Deadline:</span> {internship.data.deadline}</p>
+                                <button className="btn btn-primary"><a href={internship.data.link}>Know
+                                    more</a>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    {/* Render internship details */}
-
-
-
                 </div>
             ))}
         </div>

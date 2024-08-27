@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-          <div className='max-w-7xl mx-auto px-2'>
+          <div className='max-w-7xl mx-auto overflow-hidden px-2'>
               <Header />
               <Routes>
                   <Route path="/" element={<Home />} />

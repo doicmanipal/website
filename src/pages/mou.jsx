@@ -1,4 +1,7 @@
 import MouCard from "../components/mouCard.jsx";
+import {client} from "../utils/prismic.js";
+import InternshipAccordion from "../components/internshipAccordion.jsx";
+import {PrismicProvider} from "@prismicio/react";
 
 const Mou = () => {
     return (<div>
@@ -16,7 +19,10 @@ const Mou = () => {
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 my-12'>
-                <MouCard></MouCard>
+                <PrismicProvider client={client}>
+                    <MouCard />
+                </PrismicProvider>
+
             </div>
         </div>);
 };
