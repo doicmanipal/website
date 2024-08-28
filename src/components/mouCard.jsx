@@ -19,7 +19,7 @@ const MouCard = () => {
         <>
         {mou.map((mous) => (
             <div key={mous.id}>
-                <div className="card bg-base-100 w-96 shadow-xl">
+                <div className="card bg-base-100 min-w-80 shadow-xl">
                     <div className="card-body">
                         <div className="">
                             <PrismicRichText

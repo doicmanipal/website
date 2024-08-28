@@ -19,7 +19,7 @@ const OtherScholarships = () => {
         <>
             {other.map((others) => (
                 <div className="mx-auto" key={others.id}>
-                    <div className="card bg-neutral text-white w-96">
+                    <div className="card bg-neutral text-white min-w-80">
                         <div className="card-body">
                             <PrismicRichText
                                 field={others.data.name}
