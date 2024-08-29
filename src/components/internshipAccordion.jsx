@@ -34,7 +34,7 @@ const InternshipAccordion = () => {
                             <div className="collapse-content">
                                 <p><span className='font-bold'>Description</span>{internship.data.description}</p>
                                 <p><span className='font-bold'>Deadline:</span> {internship.data.deadline}</p>
-                                <button className="btn btn-primary"><a href={internship.data.link}>Know
+                                <button className="btn btn-primary my-4"><a href={internship.data.link}>Know
                                     more</a>
                                 </button>
                             </div>

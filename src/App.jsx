@@ -15,7 +15,7 @@ function App() {
 
     return (<>
             <Header/>
-            <div className='mx-auto overflow-x-hidden min-h-screen scroll-smooth' >
+            <div className='mx-auto overflow-hidden min-h-screen scroll-smooth' >
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/events" element={<Events/>}/>

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 const Hero = () => {
 
     return (
-        <div className='-mt-24'>
+        <div className='mt-4'>
             <div
                 className="hero min-h-screen"
                 style={{

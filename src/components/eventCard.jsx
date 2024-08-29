@@ -20,7 +20,7 @@ const EventCard = () => {
     return (
         <>
             {event.map((events) => (
-                <div className='hover:-translate-y-3 translate-y-0 duration-300' key={events.id}>
+                <div className='hover:-translate-y-3 translate-y-0 duration-300 ' key={events.id}>
                     <div className="card card-side bg-base-100 shadow-xl">
                         <figure>
                             <PrismicImage className='w-[18rem] hidden md:flex aspect-[3/4] rounded-l-2xl'
