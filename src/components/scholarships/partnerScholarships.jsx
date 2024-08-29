@@ -20,7 +20,7 @@ const PartnerScholarships = () => {
             {partner.map((partners) => (
                 <div className="mx-auto hover:-translate-y-3 translate-y-0 duration-300" key={partners.id}>
                     <div className="card bg-primary text-primary-content min-w-80">
-                        <div className="card-body">
+                        <div className="card-body text-clip text-nowrap ">
                             <PrismicRichText
                                 field={partners.data.name}
                                 components={{
