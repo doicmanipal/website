@@ -30,7 +30,7 @@ const Tabs = () => {
 
         <div className="mt-4">
             {activeTab === 'other' && (
-                <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2 justify-between'>
+                <div className='w-full  flex flex-wrap gap-4 px-2 '>
                     <PrismicProvider client={client}>
                         <OtherScholarships/>
                     </PrismicProvider>
@@ -38,7 +38,7 @@ const Tabs = () => {
             )}
 
             {activeTab === 'partnered' && (
-                <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2  justify-between'>
+                <div className=' w-full  flex flex-wrap gap-4 px-2   '>
                     <PrismicProvider client={client}><
                         PartnerScholarships/>
                     </PrismicProvider>
