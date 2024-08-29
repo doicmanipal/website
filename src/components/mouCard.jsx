@@ -18,7 +18,7 @@ const MouCard = () => {
     return (
         <>
         {mou.map((mous) => (
-            <div key={mous.id}>
+            <div className='hover:-translate-y-3 translate-y-0 duration-300' key={mous.id}>
                 <div className="card bg-base-100 min-w-80 shadow-xl">
                     <div className="card-body">
                         <div className="">
@@ -29,9 +29,9 @@ const MouCard = () => {
                                 }}
                             />
                         </div>
-                        <p><span className='font-bold'>Qs:</span>{mous.data.qs}</p>
-                        <p><span className='font-bold'>Department:</span>{mous.data.department}</p>
-                        <p><span className='font-bold'>Muj-nodal:</span>{mous.data.nodal}</p>
+                        <p><span className='font-bold'>Qs: </span>{mous.data.qs}</p>
+                        <p><span className='font-bold'>Department: </span>{mous.data.department}</p>
+                        <p><span className='font-bold text-clip text-nowrap '>Muj-nodal: </span>{mous.data.nodal}</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary"><a href={mous.data.link}>MoU</a></button>
                         </div>

@@ -18,7 +18,7 @@ const OtherScholarships = () => {
     return (
         <>
             {other.map((others) => (
-                <div className="mx-auto" key={others.id}>
+                <div className="mx-auto hover:-translate-y-3 translate-y-0 duration-300" key={others.id}>
                     <div className="card bg-neutral text-white min-w-80">
                         <div className="card-body">
                             <PrismicRichText
