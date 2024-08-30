@@ -18,12 +18,12 @@ const MouCard = () => {
     return (
         <>
         {mou.map((mous) => (
-            <div className='hover:-translate-y-3 translate-y-0 duration-300' key={mous.id}>
-                <div className="card bg-base-100 min-w-80 shadow-xl">
+            <div className='hover:-translate-y-3 translate-y-0  duration-300' key={mous.id}>
+                <div className="card bg-base-100 min-w-80 min-h-[20.5rem] shadow-xl">
                     <div className="card-body">
                         <div className="">
                             <PrismicRichText
-                                field={mous.data.name}
+                                field={mous.data.mouname}
                                 components={{
                                     heading1: ({children}) => <h2 className='card-title'>{children}</h2>,
                                 }}
