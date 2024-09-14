@@ -1,5 +1,5 @@
 import { useState } from "react";
-import EventCard from "./EventCard"; // Adjust the path as necessary
+import EventCard from "../components/eventCard.jsx";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Open");
