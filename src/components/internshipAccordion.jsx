@@ -25,24 +25,6 @@ const InternshipAccordion = () => {
       {internships.map((internship) => (
         <div key={internship.id}>
           <div className="join join-vertical w-full">
-            {/* <div className="collapse collapse-arrow join-item border-base-300 bg-white border">
-                      <input type="radio" name="my-accordion-4" defaultChecked/>
-                      <div className="collapse-title text-xl font-medium">
-                          <PrismicRichText
-                              field={internship.data.name}
-                              components={{
-                                  heading1: ({children}) => <h2>{children}</h2>,
-                              }}
-                          />
-                      </div>
-                      <div className="collapse-content">
-                          <p><span className='font-bold'>Description</span>{internship.data.description}</p>
-                          <p><span className='font-bold'>Deadline:</span> {internship.data.deadline}</p>
-                          <button className="btn btn-primary my-4"><a href={internship.data.link}>Know
-                              more</a>
-                          </button>
-                      </div>
-                  </div> */}
             <div className="collapse collapse-arrow bg-base-200">
               <input type="radio" name="accordian" defaultChecked />
               <div className="collapse-title text-xl font-medium">

@@ -33,12 +33,9 @@ const EventCard = ({ activeTab }) => {
     return <div>Error: {error.message}</div>;
   }
 
-  // Filter events based on the active tab
   const filteredEvents = events.filter(
     (event) => event.data.status === activeTab
   );
-
-  //   useEffect(()=>{console.log(documents)},[events])
 
   return (
     <>
