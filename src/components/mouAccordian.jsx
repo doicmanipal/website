@@ -3,7 +3,7 @@ import {
   useAllPrismicDocumentsByType,
 } from "@prismicio/react";
 
-const MouCard = () => {
+const MouAccordian = () => {
   const [mou, { state, error }] = useAllPrismicDocumentsByType("mou");
 
   if (state === "loading") {
@@ -20,7 +20,7 @@ const MouCard = () => {
     return <div className="hidden">No mous's found.</div>;
   }
   return (
-    <>
+    <div className="space-y-2">
       {mou.map((mous) => (
         <div className="collapse collapse-arrow bg-base-200" key={mous.id}>
           <input type="radio" name="my-accordion-1" defaultChecked />
@@ -29,7 +29,7 @@ const MouCard = () => {
               field={mous.data.mouname}
               components={{
                 heading1: ({ children }) => (
-                  <h2 className="card-title">{children}</h2>
+                  <h2 className="">{children}</h2>
                 ),
               }}
             />{" "}
@@ -59,29 +59,9 @@ const MouCard = () => {
             </div>
           </div>
         </div>
-        // <div className='hover:-translate-y-3 translate-y-0  duration-300' key={mous.id}>
-        //     <div className="card bg-base-100 min-w-80 min-h-[20.5rem] shadow-xl">
-        //         <div className="card-body">
-        //             <div className="">
-        //                 <PrismicRichText
-        //                     field={mous.data.mouname}
-        //                     components={{
-        //                         heading1: ({children}) => <h2 className='card-title'>{children}</h2>,
-        //                     }}
-        //                 />
-        //             </div>
-        //             <p><span className='font-bold'>Qs: </span>{mous.data.qs}</p>
-        //             <p><span className='font-bold'>Department: </span>{mous.data.department}</p>
-        //             <p><span className='font-bold text-clip text-nowrap '>Muj-nodal: </span>{mous.data.nodal}</p>
-        //             <div className="card-actions justify-end">
-        //                 <button className="btn btn-primary"><a href={mous.data.link}>MoU</a></button>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
       ))}
-    </>
+    </div>
   );
 };
 
-export default MouCard;
+export default MouAccordian;

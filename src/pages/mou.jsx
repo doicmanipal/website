@@ -1,4 +1,5 @@
-import MouCard from "../components/mouCard.jsx";
+import MouTabs from "../components/mou-tabs.jsx";
+import MouCard from "../components/mouAccordian.jsx";
 import {client} from "../utils/prismic.js";
 import {PrismicProvider} from "@prismicio/react";
 
@@ -18,9 +19,9 @@ const Mou = () => {
                     </h1>
                 </div>
             </div>
-            <div className='grid grid-cols-1 gap-4 my-12'>
+            <div className='gap-4 mt-10'>
                 <PrismicProvider client={client}>
-                    <MouCard />
+                    <MouTabs />
                 </PrismicProvider>
 
             </div>
