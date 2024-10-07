@@ -44,7 +44,7 @@ const EventCard = ({ activeTab }) => {
       )}
       {filteredEvents.map((event) => (
         <div
-          className="hover:-translate-y-3 translate-y-0 duration-300 mb-2"
+          className="hover:-translate-y-3 translate-y-0 duration-300"
           key={event.id}
         >
           <div className="card card-side bg-base-100 shadow-xl">

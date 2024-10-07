@@ -23,42 +23,6 @@ const OtherScholarships = () => {
   return (
     <>
       {others.map((other) => (
-        // <div
-        //   className="card bg-neutral min-h-[22.5rem] text-white w-full mx-auto hover:-translate-y-3 md:w-[45%] xl:w-[30%] translate-y-0  duration-300"
-        //   key={others.id}
-        // >
-        //   <div className="card-body text-wrap ">
-        //     <PrismicRichText
-        //       field={others.data.name}
-        //       components={{
-        //         heading1: ({ children }) => (
-        //           <h2 className="card-title text-wrap">{children}</h2>
-        //         ),
-        //       }}
-        //     />
-        //     <p>
-        //       <span className="font-bold">Country: </span>
-        //       {others.data.country}
-        //     </p>
-        //     <p>
-        //       <span className="font-bold">Degree: </span>
-        //       {others.data.degree}
-        //     </p>
-        //     <p>
-        //       <span className="font-bold">Program: </span>
-        //       {others.data.program}
-        //     </p>
-        //     <p>
-        //       <span className="font-bold">Date: </span>
-        //       {others.data.date}
-        //     </p>
-        //     <div className="card-actions justify-end">
-        //       <a href={others.data.link}>
-        //         <button className="btn">Link</button>
-        //       </a>
-        //     </div>
-        //   </div>
-        // </div>
         <div className="collapse collapse-arrow bg-base-200" key={other.id}>
           <input type="radio" name="my-accordion-1" defaultChecked />
           <div className="collapse-title text-xl font-medium">
@@ -84,9 +48,7 @@ const OtherScholarships = () => {
                 {other.data.program}
               </p>
               <p>
-                <span className="font-bold text-clip text-nowrap ">
-                  Date:{" "}
-                </span>
+                <span className="font-bold text-clip text-nowrap ">Date: </span>
                 {other.data.date}
               </p>
             </div>
