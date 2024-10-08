@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from "react";
 import OtherScholarships from "./scholarships/otherScholarships.jsx";
 import PartnerScholarships from "./scholarships/partnerScholarships.jsx";
-import {client} from "../utils/prismic.js";
-import {PrismicProvider} from "@prismicio/react";
+import { client } from "../utils/prismic.js";
+import { PrismicProvider } from "@prismicio/react";
 // import ScholarshipAccordian from './scholarships/scholershipAccordian.jsx';
 
 const ScholarshipTabs = () => {
-  const [activeTab, setActiveTab] = useState('partnered');
+  const [activeTab, setActiveTab] = useState("partnered");
 
   return (
     <div className="w-full max-w-full mt-10">
@@ -34,21 +34,21 @@ const ScholarshipTabs = () => {
       </div>
 
       <div className="mt-4">
-        {activeTab === 'other' && (
-                <div className='w-full  flex flex-wrap gap-4 px-2 '>
-                    <PrismicProvider client={client}>
-                        <OtherScholarships/>
-                    </PrismicProvider>
-                </div>
-            )}
+        {activeTab === "other" && (
+          <div className="w-full  flex flex-wrap gap-4 px-2 ">
+            <PrismicProvider client={client}>
+              <OtherScholarships />
+            </PrismicProvider>
+          </div>
+        )}
 
-            {activeTab === 'partnered' && (
-                <div className=' w-full  flex flex-wrap gap-4 px-2   '>
-                    <PrismicProvider client={client}><
-                        PartnerScholarships/>
-                    </PrismicProvider>
-                </div>
-            )}
+        {activeTab === "partnered" && (
+          <div className=" w-full  flex flex-wrap gap-4 px-2   ">
+            <PrismicProvider client={client}>
+              <PartnerScholarships />
+            </PrismicProvider>
+          </div>
+        )}
         {/* <ScholarshipAccordian/> */}
       </div>
     </div>

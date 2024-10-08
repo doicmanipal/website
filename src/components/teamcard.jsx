@@ -1,73 +1,124 @@
-import {CCTeamData} from "../data/teamdata.js";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faLinkedin, faSquareGithub, faSquareInstagram} from "@fortawesome/free-brands-svg-icons";
+import {
+  PrismicRichText,
+  PrismicImage,
+  useAllPrismicDocumentsByType,
+} from "@prismicio/react";
+import { useEffect, useState } from "react";
 
+export default function Teamcard() {
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [members, { state, error: fetchError }] =
+    useAllPrismicDocumentsByType("team");
 
-const Teamcard = () => {
+  useEffect(() => {
+    if (state === "loaded") {
+      const sortedMembers = [...members].sort((a, b) => {
+        const orderA = a.data.order || 999999;
+        const orderB = b.data.order || 999999;
+        return orderA - orderB;
+      });
+      setTeamMembers(sortedMembers);
+      setIsLoading(false);
+    } else if (state === "failed") {
+      setError(fetchError);
+      setIsLoading(false);
+    }
+  }, [members, state, fetchError]);
+
+  const ImageWithSkeleton = ({ field, alt }) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
     return (
-        <>
-            {CCTeamData.map((data, index) => (
-                <div data-aos="fade-up" className=' hover:-translate-y-6 duration-500' key={index}>
-                    <div
-                        className='mx-auto w-64 bg-primary  border-primary border-2 bg-opacity-10  hover:shadow-lg hover:shadow-primary rounded-full'>
-                        <div className="relative overflow-hidden transition duration-500 transform rounded-full">
-                            <img src={data.imageURL} alt={data.name} width={512} height={512}
-                                   className="object-cover rounded-full w-full aspect-square"/>
-                            <div
-                                className="absolute inset-0 flex flex-col justify-end p-16 text-center transition-opacity duration-300 bg-[#292929] bg-opacity-40 opacity-0 hover:opacity-100">
-                                <div className="justify-center">
-                                    <ul className="flex flex-col items-start text-white text-base font-medium">
-                                        {data.hasLinkedIn &&
-                                            <li>
-                                                <a href={data.linkedInURL} className="inline-flex gap-2">
-                                                    <FontAwesomeIcon icon={faLinkedin} size="xl"/>
-                                                    <p className="inline-flex hover:underline hover:underline-offset-2">Linkedin<span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                 fill="currentColor" className="w-4 h-4"><path fillRule="evenodd"
-                                                                                               d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                                                                               clipRule="evenodd"/></svg>
-                                        </span>
-                                                    </p>
-                                                </a>
-                                            </li>
-                                        }
-                                        {data.hasGitHub && <li>
-                                            <a href={data.gitHubURL} className="inline-flex gap-2">
-                                                <FontAwesomeIcon icon={faSquareGithub} size="xl"/>
-                                                <p className="inline-flex hover:underline hover:underline-offset-2">GitHub<span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                 fill="currentColor" className="w-4 h-4"><path fillRule="evenodd"
-                                                                                               d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                                                                               clipRule="evenodd"/></svg>
-                                        </span>
-                                                </p>
-                                            </a>
-                                        </li>}
-                                        {data.hasInstagram && <li>
-                                            <a href={data.instagramURL} className="inline-flex gap-2">
-                                                <FontAwesomeIcon icon={faSquareInstagram} size="xl"/>
-                                                <p className="inline-flex hover:underline hover:underline-offset-2">Instagram<span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                 fill="currentColor" className="w-4 h-4"><path fillRule="evenodd"
-                                                                                               d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                                                                               clipRule="evenodd"/></svg>
-                                        </span>
-                                                </p>
-                                            </a>
-                                        </li>}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="my-4">
-                        <p className="text-center text-xl font-bold">{data.name}</p>
-                        <p className="text-center text-lg">{data.position}</p>
-                    </div>
-                </div>
-            ))}
-        </>
+      <div className="w-40 h-40 overflow-hidden rounded-full relative">
+        {!imageLoaded && (
+          <div className="skeleton absolute inset-0 rounded-full" />
+        )}
+        <PrismicImage
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          field={field}
+          alt={alt}
+          onLoad={() => setImageLoaded(true)}
+        />
+      </div>
     );
-};
+  };
 
-export default Teamcard;
+  const renderTeamMemberCard = (member) => (
+    <div
+      className="flex flex-col items-center p-6 space-y-4 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+      key={member.id}
+    >
+      {member.data.image?.url ? (
+        <ImageWithSkeleton
+          field={member.data.image}
+          alt={member.data.name?.[0]?.text || "Team member"}
+        />
+      ) : (
+        <div className="skeleton w-40 h-40 rounded-full" />
+      )}
+      <div className="text-center space-y-2">
+        {member.data.name ? (
+          <PrismicRichText
+            field={member.data.name}
+            fallback="Team Member"
+            components={{
+              heading1: ({ children }) => (
+                <h2 className="text-xl font-bold">{children}</h2>
+              ),
+            }}
+          />
+        ) : (
+          <div className="skeleton h-6 w-32 mx-auto" />
+        )}
+        {member.data.position && (
+          <p className="text-lg text-gray-600">{member.data.position}</p>
+        )}
+      </div>
+    </div>
+  );
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[...Array(6)].map((_, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center p-6 space-y-4 bg-white rounded-lg shadow-lg"
+            >
+              <div className="skeleton w-40 h-40 rounded-full" />
+              <div className="space-y-2">
+                <div className="skeleton h-6 w-32" />
+                <div className="skeleton h-4 w-24" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center text-red-600">
+        Error loading team members: {error.message}
+      </div>
+    );
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {teamMembers.length === 0 ? (
+        <div className="text-center">No team members found.</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map(renderTeamMemberCard)}
+        </div>
+      )}
+    </div>
+  );
+}

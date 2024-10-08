@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
-      <div className="sticky top-4 z-10 px-[6px] md:px-0">
+      <div className="sticky top-4 z-50 px-[6px] md:px-0">
         <div className="navbar max-w-7xl bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-box bg-white md:mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
@@ -28,7 +28,7 @@ const Header = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm  bg-neutral text-white dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="menu menu-sm  bg-primary text-white dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 <li>
                   <Link to="/">Home</Link>
