@@ -43,7 +43,7 @@ const ScholarshipTabs = () => {
         )}
 
         {activeTab === "partnered" && (
-          <div className=" w-full  flex flex-wrap gap-4 px-2   ">
+          <div className=" w-full  flex flex-wrap gap-y-2 px-2   ">
             <PrismicProvider client={client}>
               <PartnerScholarships />
             </PrismicProvider>

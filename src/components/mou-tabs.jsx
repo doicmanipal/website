@@ -19,7 +19,7 @@ const MouTabs = () => {
   };
 
   return (
-    <div className="w-full max-w-full mt-10 ">
+    <div className="w-full max-w-full my-10 ">
       <div className="flex overflow-x-scroll md:shadow-none">
         {continentTabs.map((tab, idx) => (
           <button
