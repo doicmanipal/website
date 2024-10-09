@@ -54,7 +54,7 @@ export default function MouAccordian({ activeTab }) {
                 {mous.data.year}
               </p>
               <p>
-                <span className="font-bold">Qs: </span>
+                <span className="font-bold">Rankings: </span>
                 {mous.data.qs}
               </p>
               <p>
