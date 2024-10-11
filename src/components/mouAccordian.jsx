@@ -74,11 +74,11 @@ export default function MouAccordian({ activeTab }) {
                 {mous.data.contact_number}
               </p>
             </div>
-            <div>
+            {/* <div>
               <a href={`mailto:${mous.data.email}`} className="btn btn-primary">
                 Email
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       ))}
