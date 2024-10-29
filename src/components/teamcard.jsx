@@ -1,3 +1,5 @@
+"use client";
+
 import {
   PrismicRichText,
   PrismicImage,
@@ -29,9 +31,8 @@ export default function Teamcard() {
 
   const ImageWithSkeleton = ({ field, alt }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
-
     return (
-      <div className="w-40 h-40 overflow-hidden rounded-full relative">
+      <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full relative">
         {!imageLoaded && (
           <div className="skeleton absolute inset-0 rounded-full" />
         )}
@@ -49,7 +50,7 @@ export default function Teamcard() {
 
   const renderTeamMemberCard = (member) => (
     <div
-      className="flex flex-col items-center p-6 space-y-4 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2"
+      className="flex flex-col items-center p-4 space-y-4 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 w-64 h-80"
       key={member.id}
     >
       {member.data.image?.url ? (
@@ -58,26 +59,48 @@ export default function Teamcard() {
           alt={member.data.name?.[0]?.text || "Team member"}
         />
       ) : (
-        <div className="skeleton w-40 h-40 rounded-full" />
+        <div className="skeleton w-32 h-32 md:w-40 md:h-40 rounded-full" />
       )}
-      <div className="text-center space-y-2">
+      <div className="text-center space-y-2 w-full">
         {member.data.name ? (
           <PrismicRichText
             field={member.data.name}
             fallback="Team Member"
             components={{
               heading1: ({ children }) => (
-                <h2 className="text-xl font-bold">{children}</h2>
+                <h2 className="text-lg md:text-xl font-bold truncate">
+                  {children}
+                </h2>
               ),
             }}
           />
         ) : (
           <div className="skeleton h-6 w-32 mx-auto" />
         )}
-        {member.data.position && (
-          <p className="text-lg text-gray-600">{member.data.position}</p>
-        )}
+        {
+          <p className="text-sm md:text-base text-gray-600 truncate">
+            {member.data.position || "Nucleas members"}
+          </p>
+        }
       </div>
+    </div>
+  );
+
+  const renderDirector = (director) => (
+    <div className="flex justify-center mb-8">
+      {renderTeamMemberCard(director)}
+    </div>
+  );
+
+  const renderAssistantDirectors = (assistantDirectors) => (
+    <div className="flex flex-wrap justify-evenly gap-4">
+      {assistantDirectors.map(renderTeamMemberCard)}
+    </div>
+  );
+
+  const renderOtherPositions = (otherPositions) => (
+    <div className="flex flex-wrap justify-center md:justify-between gap-4">
+      {otherPositions.map(renderTeamMemberCard)}
     </div>
   );
 
@@ -88,12 +111,12 @@ export default function Teamcard() {
           {[...Array(6)].map((_, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-6 space-y-4 bg-white rounded-lg shadow-lg"
+              className="flex flex-col items-center p-6 space-y-4 bg-white rounded-lg shadow-lg w-64 h-80"
             >
-              <div className="skeleton w-40 h-40 rounded-full" />
-              <div className="space-y-2">
-                <div className="skeleton h-6 w-32" />
-                <div className="skeleton h-4 w-24" />
+              <div className="skeleton w-32 h-32 md:w-40 md:h-40 rounded-full" />
+              <div className="space-y-2 w-full">
+                <div className="skeleton h-6 w-32 mx-auto" />
+                <div className="skeleton h-4 w-24 mx-auto" />
               </div>
             </div>
           ))}
@@ -110,13 +133,28 @@ export default function Teamcard() {
     );
   }
 
+  const director = teamMembers.find(
+    (member) => member.data.position === "Director DoIC"
+  );
+  const assistantDirectors = teamMembers.filter(
+    (member) => member.data.position === "Assistant Director DoIC"
+  );
+  const otherPositions = teamMembers.filter(
+    (member) =>
+      member.data.position !== "Director DoIC" &&
+      member.data.position !== "Assistant Director DoIC"
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
       {teamMembers.length === 0 ? (
         <div className="text-center">No team members found.</div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map(renderTeamMemberCard)}
+        <div className="space-y-8">
+          {director && renderDirector(director)}
+          {assistantDirectors.length > 0 &&
+            renderAssistantDirectors(assistantDirectors)}
+          {otherPositions.length > 0 && renderOtherPositions(otherPositions)}
         </div>
       )}
     </div>
