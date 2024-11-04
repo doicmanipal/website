@@ -3,7 +3,7 @@ import {
   useAllPrismicDocumentsByType,
 } from "@prismicio/react";
 
-const InternshipAccordion = () => {
+const InternshipAccordion = ({active_tab}) => {
   const [internships, { state, error }] =
     useAllPrismicDocumentsByType("internships");
 
