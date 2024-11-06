@@ -3,6 +3,7 @@
 const Footer = () => {
     return (
         <div>
+            <hr className='my-2 mx-auto h-1 max-w-7xl'/>
             <footer className="pt-10  text-orange-600">
                 <div
                     className="container px-2 max-w-7xl grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">

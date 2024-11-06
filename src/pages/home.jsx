@@ -101,7 +101,6 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <hr className="h-1 max-w-7xl mb-4 bg-primary mx-auto"/>
         </div>
       </div>
   );
