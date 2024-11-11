@@ -151,9 +151,18 @@ export default function Teamcard() {
         <div className="text-center">No team members found.</div>
       ) : (
         <div className="space-y-8">
+          <h2 className="my-4 text-center text-2xl font-bold">Director</h2>
           {director && renderDirector(director)}
+          <hr className="my-2 mx-auto h-1" />
+          <h2 className="my-4 text-center text-2xl font-bold">
+            Assistant Directors
+          </h2>
           {assistantDirectors.length > 0 &&
             renderAssistantDirectors(assistantDirectors)}
+          <hr className="my-2 mx-auto h-1" />
+          <h2 className="my-4 text-center text-2xl font-bold">
+            Nucleas Members
+          </h2>
           {otherPositions.length > 0 && renderOtherPositions(otherPositions)}
         </div>
       )}

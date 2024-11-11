@@ -69,6 +69,12 @@ export default function MouAccordian({ activeTab }) {
               </p>
               <p>
                 <span className="font-bold text-clip whitespace-nowrap">
+                  Email:{" "}
+                </span>
+                {mous.data.email}
+              </p>
+              <p>
+                <span className="font-bold text-clip whitespace-nowrap">
                   Contact Number:{" "}
                 </span>
                 {mous.data.contact_number}
