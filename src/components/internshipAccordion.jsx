@@ -3,7 +3,7 @@ import {
   useAllPrismicDocumentsByType,
 } from "@prismicio/react";
 
-const InternshipAccordion = ({active_tab}) => {
+const InternshipAccordion = ({ activeTab }) => {
   const [internships, { state, error }] =
     useAllPrismicDocumentsByType("internships");
 
@@ -20,13 +20,36 @@ const InternshipAccordion = ({active_tab}) => {
   if (!internships || internships.length === 0) {
     return <div className="hidden">No internships found.</div>;
   }
+
+  const filteredInternships = internships.filter((internship) => {
+    const [day, month, year] = internship.data.deadline.split("/").map(Number);
+    const deadlineDate = new Date(year, month - 1, day);
+
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    if (activeTab === "Open") {
+      return deadlineDate >= currentDate;
+    } else {
+      return deadlineDate < currentDate;
+    }
+  });
+
+  if (filteredInternships.length === 0) {
+    return (
+      <div className="text-center py-8 text-gray-500">
+        No {activeTab.toLowerCase()} internships available.
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-2">
-      {internships.map((internship) => (
+      {filteredInternships.map((internship) => (
         <div key={internship.id}>
           <div className="join join-vertical w-full">
             <div className="collapse collapse-arrow bg-base-200">
-              <input type="radio" name="accordian" defaultChecked />
+              <input type="radio" name="accordian" />
               <div className="collapse-title text-xl font-medium">
                 <PrismicRichText
                   field={internship.data.name}
