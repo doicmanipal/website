@@ -19,12 +19,7 @@ const TestimonialsCard = () => {
             key={index}
             className="relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
           >
-            {/* Decorative background */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full">
-              {/* <FontAwesomeIcon
-                icon={faStar}
-                className="text-primary/10 w-8 h-8 absolute top-4 right-4"
-              /> */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -34,9 +29,7 @@ const TestimonialsCard = () => {
               </svg>
             </div>
 
-            {/* Content container */}
             <div className="relative p-6">
-              {/* Profile section */}
               <div className="flex flex-col items-center mb-6">
                 <div className="relative mb-4">
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-md transform -translate-y-1" />
@@ -48,7 +41,6 @@ const TestimonialsCard = () => {
                 </div>
               </div>
 
-              {/* Quote section */}
               <div className="relative mb-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +63,6 @@ const TestimonialsCard = () => {
                 </svg>
               </div>
 
-              {/* Author details */}
               <div className="text-center border-t border-gray-100 pt-4">
                 <div className="font-semibold text-gray-900">
                   <PrismicRichText
