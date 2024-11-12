@@ -12,7 +12,7 @@ const Home = () => {
           </h1>
         </div>
       </div>
-      <div className="max-w-7xl px-2 mx-auto">
+      <div className="max-w-7xl px-2 mx-auto space-y-2">
         <div className="mx-auto p-4  max-w-7xl">
           <p className="text-sm sm:text-2xl text-left mx-auto">
             Directorate of International and Collaborations (DoIC) is headed by
