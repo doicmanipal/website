@@ -12,7 +12,7 @@ const Home = () => {
           </h1>
         </div>
       </div>
-      <div className="max-w-7xl px-2 mx-auto space-y-2">
+      <div className="max-w-7xl mb-14 px-2 mx-auto space-y-2">
         <div className="mx-auto p-4  max-w-7xl">
           <p className="text-sm sm:text-2xl text-left mx-auto">
             Directorate of International and Collaborations (DoIC) is headed by
@@ -34,7 +34,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="bg-primary p-4 mb-12 rounded-xl ">
+        <div className="bg-primary p-4  rounded-xl ">
           <div className="mx-auto max-w-7xl space-y-2">
             <h2 className="text-2xl text-white text-left flex items-center">
               <svg
