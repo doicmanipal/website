@@ -3,7 +3,7 @@ import Hero from "../components/hero.jsx";
 const Home = () => {
   return (
     <div>
-      <Hero></Hero>
+      <Hero />
       <div className="text-pretty ">
         <div className="mx-auto mb-6 mt-12 max-w-7xl">
           <hr className="w-10 bg-primary mx-auto h-1" />
@@ -14,7 +14,7 @@ const Home = () => {
       </div>
       <div className="max-w-7xl px-2 mx-auto space-y-2">
         <div className="mx-auto p-4  max-w-7xl">
-          <p className="text-sm sm:text-2xl text-left mx-auto">
+          <p className="text-sm sm:text-2xl mx-auto text-justify">
             Directorate of International and Collaborations (DoIC) is headed by
             a team of dedicated staff and supported by the advisory council with
             a group of faculty and administrators representing key academic
@@ -48,7 +48,7 @@ const Home = () => {
               </svg>
               Provide Direction
             </h2>
-            <p className="text-sm sm:text-xl text-left mx-auto text-white text-pretty">
+            <p className="text-sm sm:text-xl text-justify mx-auto text-white text-pretty">
               The Office is primarily responsible for providing direction,
               assistance and synchronizing all of the University’s international
               work with overseas Institutions and Governments. While providing
@@ -84,7 +84,7 @@ const Home = () => {
               </svg>
               Resource Centre
             </h2>
-            <p className="text-sm sm:text-xl text-left mx-auto text-white">
+            <p className="text-sm sm:text-xl text-justify mx-auto text-white">
               It will serve as the primary liaison and resource center for the
               University’s vital international linkages, by supporting the
               development of all memorandum of agreements and partnerships with
