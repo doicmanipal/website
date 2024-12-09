@@ -79,7 +79,7 @@ export default function Teamcard() {
         )}
         {
           <p className="text-sm md:text-base text-gray-600 truncate">
-            {member.data.position || "Nucleas members"}
+            {member.data.position || "Nucleus members"}
           </p>
         }
       </div>
@@ -161,7 +161,7 @@ export default function Teamcard() {
             renderAssistantDirectors(assistantDirectors)}
           <hr className="my-2 mx-auto h-1" />
           <h2 className="my-4 text-center text-2xl font-bold">
-            Nucleas Members
+            Nucleus Members
           </h2>
           {otherPositions.length > 0 && renderOtherPositions(otherPositions)}
         </div>
