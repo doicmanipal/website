@@ -42,7 +42,7 @@ const Header = () => {
                 <Link to="/internships">Internships</Link>
               </li>
               <li>
-                <Link to="/faculty">Faculty Funding</Link>
+                <Link to="/faculty">Faculty Exchange</Link>
               </li>
               <li>
                 <Link to="/team">Team</Link>
@@ -81,7 +81,7 @@ const Header = () => {
               <Link to="/internships">Internships</Link>
             </li>
             <li>
-              <Link to="/faculty">Faculty Funding</Link>
+              <Link to="/faculty">Faculty Exchange</Link>
             </li>
             <li>
               <Link to="/testimonials">Testimonials</Link>
