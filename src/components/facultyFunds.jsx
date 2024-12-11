@@ -1,17 +1,30 @@
 import {PrismicImage, PrismicRichText, useAllPrismicDocumentsByType} from "@prismicio/react";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 const FacultyFunds = () => {
-    const [facultyFunds] =
-        useAllPrismicDocumentsByType("facultyfunds");
+    const [facultyFundDocuments, {state, error: fetchError}] = useAllPrismicDocumentsByType("facultyfunds");
+    const [facultyfunds, setFacultyFunds] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        console.log(facultyFunds);
-    }, [facultyFunds]);
+        if (state === "loaded") {
+            setFacultyFunds(facultyFundDocuments);
+            setLoading(false);
+        } else if (state === "error") {
+            setError(fetchError);
+            setLoading(false);
+        }
+    }, [state, facultyFundDocuments, fetchError]);
+
+    // useEffect(() => {
+    //     console.log(facultyfunds);
+    // }, [facultyfunds]);
+
     return (
         <div>
             <div className="space-y-2">
-                {facultyFunds.map((faculty) => (
+                {facultyfunds.map((faculty) => (
                     <div key={faculty.id}>
                         <div className="card card-side bg-base-100 shadow-xl">
                             <PrismicImage
