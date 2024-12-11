@@ -10,6 +10,7 @@ import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
 import Testimonials from './pages/testimonials.jsx';
 import Faq from './pages/faq.jsx';
+import Faculty from "./pages/faculty.jsx";
 
 
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/faq" element={<Faq />} />
+              <Route path="/faculty" element={<Faculty />} />
           </Routes>
         </div>
         <Footer />

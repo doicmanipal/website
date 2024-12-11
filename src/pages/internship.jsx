@@ -1,4 +1,4 @@
-import InternshipAccordion from "../components/internshipAccordion.jsx";
+
 import { PrismicProvider } from "@prismicio/react";
 import { client } from "../utils/prismic.js";
 import InternshipTabs from "../components/internship-tabs.jsx";

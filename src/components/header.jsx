@@ -23,8 +23,8 @@ const Header = () => {
               </svg>
             </div>
             <ul
-              tabIndex={0}
-              className="menu menu-sm bg-primary text-white dropdown-content rounded-box z-[1] mx-auto mt-3 w-52 p-2 shadow"
+                tabIndex={0}
+                className="menu menu-sm bg-primary text-white dropdown-content rounded-box z-[1] mx-auto mt-3 w-52 p-2 shadow"
             >
               <li>
                 <Link to="/">Home</Link>
@@ -40,6 +40,9 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/internships">Internships</Link>
+              </li>
+              <li>
+                <Link to="/faculty">Faculty Funding</Link>
               </li>
               <li>
                 <Link to="/team">Team</Link>
@@ -61,10 +64,7 @@ const Header = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal md:text-base lg:text-lg space-x-1 px-1">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
+          <ul className="menu menu-horizontal md:text-base lg:text-lg  px-1">
             <li>
               <Link to="/team">Team</Link>
             </li>
@@ -81,6 +81,9 @@ const Header = () => {
               <Link to="/internships">Internships</Link>
             </li>
             <li>
+              <Link to="/faculty">Faculty Funding</Link>
+            </li>
+            <li>
               <Link to="/testimonials">Testimonials</Link>
             </li>
             <li>
@@ -90,7 +93,7 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           <a
-            href="https://jaipur.manipal.edu/"
+              href="https://jaipur.manipal.edu/"
             target="_blank"
             className="btn border-primary text-white bg-primary fill-white hover:border-primary hover:bg-white hover:text-primary hover:fill-primary"
           >
