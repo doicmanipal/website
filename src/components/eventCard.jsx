@@ -33,15 +33,19 @@ const EventCard = ({ activeTab }) => {
     return <div>Error: {error.message}</div>;
   }
 
-  const filteredEvents = events.filter(
-    (event) => event.data.status === activeTab
-  );
+  const filteredEvents = events.filter((event) => {
+    let event_deadline = new Date(event.data.end_date);
+    let curr_date = new Date();
+    if (activeTab === "Open") {
+      return event_deadline >= curr_date;
+    } else {
+      return event_deadline < curr_date;
+    }
+  });
 
   return (
     <>
-      {filteredEvents.length === 0 && (
-        <div>No events found for the selected status.</div>
-      )}
+      {filteredEvents.length === 0 && <div className="w-full text-center">No events found.</div>}
       {filteredEvents.map((event) => (
         <div
           className="hover:-translate-y-3 translate-y-0 duration-300"
@@ -85,10 +89,10 @@ const EventCard = ({ activeTab }) => {
               <p>
                 <span className="font-bold">Price:</span> {event.data.price}
               </p>
-              <p>
+              {/* <p>
                 <span className="font-bold">Registration status:</span>{" "}
                 {event.data.status}
-              </p>
+              </p> */}
               <div className="flex items-center gap-x-2">
                 <a href={event.data.brochure} target="_blank">
                   <button className="btn btn-primary text-white w-max flex items-center justify-center">

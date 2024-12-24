@@ -23,11 +23,16 @@ const InternshipAccordion = ({ activeTab }) => {
   }
 
   const filteredInternships = internships.filter((internship) => {
+    if (internship.data.brochure === null) {
+      return false;
+    }
+    if (internship.data.deadline === "-") {
+      // for the internships that are open throughout the year
+      return activeTab === "Open";
+    }
     const [day, month, year] = internship.data.deadline.split("/").map(Number);
     const deadlineDate = new Date(year, month - 1, day);
-
     const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
 
     if (activeTab === "Open") {
       return deadlineDate >= currentDate;
