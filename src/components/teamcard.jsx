@@ -160,10 +160,10 @@ export default function Teamcard() {
           {assistantDirectors.length > 0 &&
             renderAssistantDirectors(assistantDirectors)}
           <hr className="my-2 mx-auto h-1" />
-          <h2 className="my-4 text-center text-2xl font-bold">
-            Nucleus Members
-          </h2>
-          {otherPositions.length > 0 && renderOtherPositions(otherPositions)}
+          {/*<h2 className="my-4 text-center text-2xl font-bold">*/}
+          {/*  Nucleus Members*/}
+          {/*</h2>*/}
+          {/*{otherPositions.length > 0 && renderOtherPositions(otherPositions)}*/}
         </div>
       )}
     </div>
