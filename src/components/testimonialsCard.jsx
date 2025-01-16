@@ -36,7 +36,7 @@ const TestimonialsCard = () => {
                   <img
                     src={testimonial.data.profile_pic.url}
                     alt={testimonial.data.Name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md relative"
+                    className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md relative"
                   />
                 </div>
               </div>
